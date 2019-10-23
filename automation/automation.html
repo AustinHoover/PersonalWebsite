@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IT Automation Suite</title>
+  </head>
+<link rel="stylesheet" type="text/css" href="automation.css">
+  <body>
+    <div class="content">
+      <div class="content-centered">
+        <div class="current-project-title"><a href="../index.html">Main Page</a></div>
+        <div class="project-name">IT Automation Suite</div>
+        <div class="description">This project was an attempt to automate the bulk of the technical work required by Clemson's CORE IT department. Regrettably, CCIT (Clemson University's main IT entity) changed their backend systems thereby making this project impossible to complete.</div>
+        <div class="start-date">Approximate Start Date: May 2017</div>
+        <div>Approximate End Date: June 2019</div>
+        <div class="source-code">Source code: Due to the sensitive nature of parts of the project, please contact me for access to the source code.</div>
+        <br>
+        <br>
+        <div class="features-title">How it worked</div>
+        <ol>
+          <li>IT worker creates ticket in CCIT's systems</li>
+          <li>IT worker plugs special USB stick into the computer that needs software installed/updates/malware scan/etc</li>
+          <li>The USB stick boots the client program</li>
+          <li>The client connects/authenticates with the server securely (over TLS)</li>
+          <li>The server looks up the ticket details in CCIT's system and scrapes the data that contains the required work</li>
+          <li>The server communicates these requirements back to the client</li>
+          <li>The client maps the network shares with the required software, runs checks, then installs the software</li>
+          <li>The client notifies the server that the work is done</li>
+          <li>End communication</li>
+        </ol>
+        <div>In the later stages of the project, the clients were able to automatically update themselves after connecting with the server.</div>
+        <div>The server also hosted a webpage that listed out the status of every client that was currently running.</div>
+        <div>Finally, I automated the script development pipeline. I could develop a script to install a software and it would be tested on a virtual machine before rolling out to the server.</div>
+        <div>How the network architecture looked:</div>
+        <div><img src="hierarchy.png" alt="hierarchy.png"></div>
+      </div>
+    </div>
+  </body>
+</html>
