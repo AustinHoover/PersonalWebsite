@@ -1,0 +1,42 @@
+
+
+.app-container-dark {
+    background-color: rgb(25,25,25);
+    color: rgb(200,200,200);
+}
+
+.app-container-light {
+    background-color: rgb(200,200,200);
+    color: rgb(25,25,25);
+}
+
+
+.body-style-dark {
+    background-color: rgb(25,25,25);
+    color: rgb(200,200,200);
+}
+
+
+.body-style-light {
+    background-color: rgb(200,200,200);
+    color: rgb(25,25,25);
+}
+
+.body-style {
+    padding: 0;
+    margin: 0;
+}
+
+.NavbarMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.NavBarMenuItem {
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+}

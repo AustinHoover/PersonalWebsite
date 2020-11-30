@@ -1,0 +1,23 @@
+{
+  "name": "personal-website",
+  "version": "3.0.0",
+  "description": "My personal website!",
+  "main": "./src/entry/Index.html",
+  "scripts": {
+    "start": "parcel ./src/entry/index.html",
+    "build": "parcel build ./src/entry/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Austin Hoover",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-router-dom": "^5.1.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "typescript": "^4.0.5"
+  }
+}
