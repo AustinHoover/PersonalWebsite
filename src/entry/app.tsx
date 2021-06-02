@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
-import {AppRouter, AppRouterProps} from './router';
-
+import * as React from "react"; 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Index from "../pages/Index/Index";
+import NotFound from "../pages/NotFound/NotFound";
+import Projects from "../pages/Projects/Projects";
+import Contact from "../pages/Contact/Contact";
+import Technologies from "../pages/Technologies/Technologies";
+import Sources from "../pages/Sources/Sources";
 
 const App = () => {
-    let elements = <div/>;
-    //tests whether mobile or not
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        //is mobile
-        elements = <div>mobile</div>;
-    } else {
-        //is not mobile
-        elements = <div>not mobile</div>;
-    }
-
-
-    let [theme, setTheme] = useState("dark");
-
     return (
-    <>
-        <AppRouter theme={theme} setTheme={setTheme}/>
-        {elements}
-    </>
-)
-};
-
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/" exact component={Index}/>
+                    <Route path="/projects" component={Projects}/>
+                    <Route path="/technologies" component={Technologies}/>
+                    <Route path="/contact" component={Contact}/>
+                    <Route path="/sources" component={Sources}/>
+                    <Route component={NotFound} exact/>
+                </Switch>
+            </BrowserRouter>
+        </React.Suspense>
+    );
+}
 
 export default App;
