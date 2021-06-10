@@ -6,7 +6,6 @@ import Index from "../pages/Index/Index";
 import NotFound from "../pages/NotFound/NotFound";
 import Projects from "../pages/Projects/Projects";
 import Contact from "../pages/Contact/Contact";
-import Technologies from "../pages/Technologies/Technologies";
 import Sources from "../pages/Sources/Sources";
 
 const App = () => {
@@ -16,7 +15,6 @@ const App = () => {
                 <Switch>
                     <Route path="/" exact component={Index}/>
                     <Route path="/projects" component={Projects}/>
-                    <Route path="/technologies" component={Technologies}/>
                     <Route path="/contact" component={Contact}/>
                     <Route path="/sources" component={Sources}/>
                     <Route component={NotFound} exact/>

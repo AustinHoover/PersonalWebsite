@@ -19,11 +19,6 @@ const entries : NavEntry[] = [
         external : false,
     },
     {
-        name: "Technologies",
-        link: "/technologies",
-        external : false,
-    },
-    {
         name: "Contact",
         link: "/contact",
         external : false,
