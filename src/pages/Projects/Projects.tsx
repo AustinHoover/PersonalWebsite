@@ -49,7 +49,7 @@ const Projects = () => {
                             imgpath={computer}
                         />
                         <ProjectListing 
-                            title={"Rendering Engine"}
+                            title={"3D Game Engine"}
                             description={"A fully functional game engine. It supports dynamic terrain LOD, model loading, networking, an audio engine, and hooks into my terrain generation library."}
                             imgpath={chocobo}
                         />
