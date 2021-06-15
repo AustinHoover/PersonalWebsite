@@ -13,15 +13,18 @@ const Contact = () => {
                     <h1 className="p-3">Contacts</h1>
                     <div className="row">
                         <div className="col-3"></div>
-                        <div className="text-left col-6">
+                        <div className="text-center col-6">
                             <p>
                                 <a href="mailto:austinwhoover@gmail.com">austinwhoover@gmail.com</a>
+                            </p>
+                            <p>
+                                <a href="https://github.com/AustinHoover">Github</a>
                             </p>
                             <p>
                                 <a href="https://www.linkedin.com/in/austin-hoover-b4a30b182/">LinkedIn</a>
                             </p>
                             <p>
-                                <a href="https://github.com/AustinHoover">Github</a>
+                                <a href="https://twitter.com/railgunsr">Twitter</a>
                             </p>
                         </div>
                         <div className="col-3"></div>

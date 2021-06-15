@@ -19,6 +19,11 @@ const entries : NavEntry[] = [
         external : false,
     },
     {
+        name: "About",
+        link: "/about",
+        external : false,
+    },
+    {
         name: "Contact",
         link: "/contact",
         external : false,

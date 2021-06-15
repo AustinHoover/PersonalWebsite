@@ -15,6 +15,8 @@ import * as rts from './rts.png';
 import * as stocks from './stocks.png';
 //@ts-ignore
 import * as terrain from './terrain.gif';
+//@ts-ignore
+import * as telephoneIcon from './Telephone-icon.png';
 
 
 const Projects = () => {
@@ -34,29 +36,10 @@ const Projects = () => {
                     </p>
                     <div className="card-columns">
                         <ProjectListing 
-                            title={"Terrain Generation Library"}
-                            description={"A library I designed for generating terrain. Above is a video of it in action. It simulates plate tectonics to create semi-realistic landmasses."}
-                            imgpath={terrain}
-                        />
-                        <ProjectListing 
-                            title={"IT Management Software"}
-                            description={"While working in IT, I wrote software that performed various tasks and was managable from a central reporting server."}
-                            imgpath={hierarchy}
-                        />
-                        <ProjectListing 
-                            title={"Digital Processor"}
-                            description={"After feeling very inspired in class I designed the circuit logic for a rudimentary processor."}
-                            imgpath={computer}
-                        />
-                        <ProjectListing 
-                            title={"3D Game Engine"}
-                            description={"A fully functional game engine. It supports dynamic terrain LOD, model loading, networking, an audio engine, and hooks into my terrain generation library."}
-                            imgpath={chocobo}
-                        />
-                        <ProjectListing 
-                            title={"Ray Tracer"}
-                            description={"I wrote this ray tracer in highschool. The code is gross but hey it's a pretty gif."}
-                            imgpath={raytracer}
+                            title={"Telephone"}
+                            description={"A games netcode parser generator written in Java."}
+                            imgpath={telephoneIcon}
+                            githublink={"https://github.com/AustinHoover/Telephone"}
                         />
                         <ProjectListing 
                             title={"RTS Engine"}
@@ -67,6 +50,27 @@ const Projects = () => {
                             title={"Cryptocurrency Research Framework"}
                             description={"I attempted to construct a framework for cryptocurrency analysis. I designed very robust and complicated software. I was ultimately unsuccessful in my pursuit. Turns out predicting the future is a hard problem."}
                             imgpath={stocks}
+                            githublink={"https://github.com/AustinHoover/crypto"}
+                        />
+                        <ProjectListing 
+                            title={"Terrain Generation Library"}
+                            description={"A library I designed for generating terrain. Above is a video of it in action. It simulates plate tectonics to create semi-realistic landmasses."}
+                            imgpath={terrain}
+                        />
+                        <ProjectListing 
+                            title={"IT Management Software"}
+                            description={"While working in IT, I wrote software that performed various tasks and was managable from a central reporting server."}
+                            imgpath={hierarchy}
+                        />
+                        <ProjectListing 
+                            title={"3D Game Engine"}
+                            description={"A fully functional game engine. It supports dynamic terrain LOD, model loading, networking, an audio engine, and hooks into my terrain generation library."}
+                            imgpath={chocobo}
+                        />
+                        <ProjectListing 
+                            title={"Ray Tracer"}
+                            description={"I wrote this ray tracer in highschool. The code is gross but hey it's a pretty gif."}
+                            imgpath={raytracer}
                         />
                     </div>
                 </div>

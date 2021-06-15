@@ -19,9 +19,9 @@ const ProjectListing = (props : ProjectListingProps) => {
                 <h5 className="card-title">{props.title}</h5>
                 <p className="card-text">{props.description}</p>
                 {
-                    props.githublink ? <a href={props.githublink} className="btn btn-primary">Github Link</a> : <div/>
+                    props.githublink ? <a href={props.githublink} className="btn btn-primary">Github</a> : <div/>
                 }
-                {props.githublink ? <a href={props.githublink}>Github Link</a> : <div></div>}
+                {/* {props.githublink ? <a href={props.githublink}>Github Link</a> : <div></div>} */}
             </div>
         </div>
     );
