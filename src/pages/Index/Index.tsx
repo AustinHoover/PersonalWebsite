@@ -26,7 +26,7 @@ const Index = () => {
                         <div className="row"></div>
                         <div className="row text-center">
                             <div className="col">
-                                <h1 className="p-3 text-light display-1">🚀 Hello 🚀</h1>
+                                <h1 className="p-3 text-light display-1">Hello</h1>
                                 <p className="text-light display-4">
                                     My name is Austin Hoover.
                                     This is my homepage.
