@@ -5,6 +5,7 @@ interface NavEntry {
     name : string,
     link : string,
     external : boolean,
+    isIcon : boolean,
 }
 
 const entries : NavEntry[] = [
@@ -12,36 +13,55 @@ const entries : NavEntry[] = [
         name: "Home",
         link: "/",
         external : false,
+        isIcon : false,
     },
     {
         name: "Projects",
         link: "/projects",
         external : false,
-    },
-    {
-        name: "About",
-        link: "/about",
-        external : false,
+        isIcon : false,
     },
     {
         name: "Contact",
         link: "/contact",
         external : false,
+        isIcon : false,
     },
     {
         name: "Resume",
         link: "/resume.pdf",
         external : true,
-    },
-    {
-        name: "Github",
-        link: "https://github.com/AustinHoover",
-        external : true,
+        isIcon : false,
     },
     {
         name: "Sources",
         link: "/sources",
         external: false,
+        isIcon : false,
+    },
+    {
+        name: "bi bi-github",
+        link: "https://github.com/AustinHoover/",
+        external: true,
+        isIcon: true,
+    },
+    {
+        name: "bi bi-linkedin",
+        link: "https://www.linkedin.com/in/austin-hoover-b4a30b182/",
+        external: true,
+        isIcon: true,
+    },
+    {
+        name: "bi bi-twitter",
+        link: "https://twitter.com/railgunsr/",
+        external: true,
+        isIcon: true,
+    },
+    {
+        name: "bi bi-envelope-fill",
+        link: "mailto:austinwhoover@gmail.com",
+        external: true,
+        isIcon: true,
     }
 ];
 
@@ -53,11 +73,22 @@ const DefaultNavbar = (props : DefaultNavbarProps) => {
     let NavItems : JSX.Element[] = [];
     entries.forEach((el)=>{
         if(el.external){
-            NavItems.push(
-                <div className="nav-item" key={el.name + "navitem"}>
-                    <a href={el.link} className="nav-link">{el.name}</a>
-                </div>
-            )
+            if(el.isIcon){
+                NavItems.push(
+                    <div className="nav-item" key={el.name + "navitem"}>
+                        <a href={el.link} className="nav-link"><i className={el.name} role="button" style={{
+                            fontSize: "1.2rem",
+                            color: "gray",
+                        }}></i></a>
+                    </div>
+                )
+            } else {
+                NavItems.push(
+                    <div className="nav-item" key={el.name + "navitem"}>
+                        <a href={el.link} className="nav-link">{el.name}</a>
+                    </div>
+                )
+            }
         } else {
             if(props.name){
                 if(props.name === el.name){
@@ -89,11 +120,6 @@ const DefaultNavbar = (props : DefaultNavbarProps) => {
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    {/* <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbarNav">
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                    </button> */}
                 </div>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <div className="navbar-nav mr-auto">

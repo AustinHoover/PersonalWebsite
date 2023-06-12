@@ -28,8 +28,7 @@ const Index = () => {
                             <div className="col">
                                 <h1 className="p-3 text-light display-1">Hello</h1>
                                 <p className="text-light display-4">
-                                    My name is Austin Hoover.
-                                    This is my homepage.
+                                    This is the homepage of Austin Hoover.
                                 </p>
                                 {/* <img className="card-img-top text-light" src="" alt="There was supposed to be a picture of my face here"></img> */}
                             </div>

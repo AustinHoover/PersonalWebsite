@@ -13,7 +13,6 @@ module.exports = {
         open: true,
         host: 'localhost',
         port: '8000',
-        contentBase: path.join(__dirname, 'dist'),
         historyApiFallback: true,
     },
     plugins: [
@@ -39,7 +38,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader','css-loader'],
+                use: ['style-loader', 'css-loader'],
                 exclude: ['/node_modules'],
             },
             {
@@ -50,6 +49,18 @@ module.exports = {
                 test: /\.jpg$|.gif/,
                 type: 'asset',
             },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
+            }
 
             // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/

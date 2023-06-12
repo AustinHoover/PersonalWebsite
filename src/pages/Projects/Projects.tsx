@@ -2,9 +2,7 @@ import * as React from "react";
 import DefaultNavbar from "../../components/DefaultNavbar/DefaultNavbar";
 import ProjectListing from "../../components/ProjectListing/ProjectListing";
 //@ts-ignore
-import * as chocobo from './chocobo.png';
-//@ts-ignore
-import * as computer from './computer.png';
+import * as treePic from './GameEngineTree.png';
 //@ts-ignore
 import * as hierarchy from './hierarchy.png';
 //@ts-ignore
@@ -42,15 +40,9 @@ const Projects = () => {
                             githublink={"https://github.com/AustinHoover/Telephone"}
                         />
                         <ProjectListing 
-                            title={"RTS Engine"}
-                            description={"Written many moons ago, this is a complex real time strategy game engine. It supports a bunch of stuff and is generally too complicated to summarize in a little box."}
-                            imgpath={rts}
-                        />
-                        <ProjectListing 
-                            title={"Cryptocurrency Research Framework"}
-                            description={"I attempted to construct a framework for cryptocurrency analysis. I designed very robust and complicated software. I was ultimately unsuccessful in my pursuit. Turns out predicting the future is a hard problem."}
-                            imgpath={stocks}
-                            githublink={"https://github.com/AustinHoover/crypto"}
+                            title={"3D Game Engine"}
+                            description={"A fully functional game engine. It supports dynamic terrain LOD, model loading, networking, an audio engine, and hooks into my terrain generation library."}
+                            imgpath={treePic}
                         />
                         <ProjectListing 
                             title={"Terrain Generation Library"}
@@ -58,19 +50,14 @@ const Projects = () => {
                             imgpath={terrain}
                         />
                         <ProjectListing 
-                            title={"IT Management Software"}
-                            description={"While working in IT, I wrote software that performed various tasks and was managable from a central reporting server."}
-                            imgpath={hierarchy}
-                        />
-                        <ProjectListing 
-                            title={"3D Game Engine"}
-                            description={"A fully functional game engine. It supports dynamic terrain LOD, model loading, networking, an audio engine, and hooks into my terrain generation library."}
-                            imgpath={chocobo}
-                        />
-                        <ProjectListing 
                             title={"Ray Tracer"}
                             description={"I wrote this ray tracer in highschool. The code is gross but hey it's a pretty gif."}
                             imgpath={raytracer}
+                        />
+                        <ProjectListing 
+                            title={"IT Management Software"}
+                            description={"While working in IT, I wrote software that performed various tasks and was managable from a central reporting server."}
+                            imgpath={hierarchy}
                         />
                     </div>
                 </div>
