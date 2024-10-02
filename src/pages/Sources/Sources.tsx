@@ -4,7 +4,7 @@ import DefaultNavbar from "../../components/DefaultNavbar/DefaultNavbar";
 
 const Sources = () => {
     return (
-        <>
+        <div>
             <header>
                 <DefaultNavbar name={"Sources"}/>
             </header>
@@ -23,7 +23,7 @@ const Sources = () => {
                     </div>
                 </div>
             </main>
-        </>
+        </div>
     );
 }
 

@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import "./ProjectListing.css";
 
 
 export interface ProjectListingProps {
@@ -21,7 +20,6 @@ const ProjectListing = (props : ProjectListingProps) => {
                 {
                     props.githublink ? <a href={props.githublink} className="btn btn-primary">Github</a> : <div/>
                 }
-                {/* {props.githublink ? <a href={props.githublink}>Github Link</a> : <div></div>} */}
             </div>
         </div>
     );

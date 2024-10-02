@@ -4,7 +4,7 @@ import DefaultNavbar from "../../components/DefaultNavbar/DefaultNavbar";
 
 const Contact = () => {
     return (
-        <>
+        <div>
             <header>
                 <DefaultNavbar name={"Contact"}/>
             </header>
@@ -15,7 +15,7 @@ const Contact = () => {
                         <div className="col-3"></div>
                         <div className="text-center col-6">
                             <p>
-                                <a href="mailto:austinwhoover@gmail.com">austinwhoover@gmail.com</a>
+                                <a href="mailto:austin@austinhoover.net">austin@austinhoover.net</a>
                             </p>
                             <p>
                                 <a href="https://github.com/AustinHoover">Github</a>
@@ -31,7 +31,7 @@ const Contact = () => {
                     </div>
                 </div>
             </main>
-        </>
+        </div>
     );
 }
 

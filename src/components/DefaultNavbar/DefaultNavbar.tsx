@@ -1,5 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import MoonIcon from "!@svgr/webpack?modules!bootstrap-icons/icons/moon-fill.svg";
+import SunIcon from "!@svgr/webpack?modules!bootstrap-icons/icons/sun-fill.svg";
+import ReactSwitch from "react-switch";
+//@ts-ignore
+import { ThemeContext } from "../../entry/App";
 
 interface NavEntry {
     name : string,
@@ -29,7 +34,7 @@ const entries : NavEntry[] = [
     },
     {
         name: "Resume",
-        link: "/resume.pdf",
+        link: "/AustinHooverResume.pdf",
         external : true,
         isIcon : false,
     },
@@ -70,6 +75,26 @@ export interface DefaultNavbarProps {
 }
 
 const DefaultNavbar = (props : DefaultNavbarProps) => {
+
+    //Theme control related
+    let context = React.useContext(ThemeContext)
+    const onToggleDarkMode = (checked: boolean) => {
+        context.setTheme(checked)
+        document.documentElement.setAttribute('data-bs-theme', checked ? "light" : "dark")
+    }
+    const theme = context.getTheme()
+
+    //narbar itself
+    const navbarColors: string = "navbar navbar-expand-lg " + (theme ? "navbar-light bg-light" : "navbar-dark bg-dark")
+    const collapsingProps = {
+        "data-bs-toggle": "collapse",
+        "data-bs-target": "#navbarNav",
+        "aria-controls": "navbarNav",
+        "aria-expanded": false,
+        "aria-label": "Toggle navigation",
+    }
+
+    //links inside the navbar
     let NavItems : JSX.Element[] = [];
     entries.forEach((el)=>{
         if(el.external){
@@ -114,18 +139,49 @@ const DefaultNavbar = (props : DefaultNavbarProps) => {
         }
     });
     return (
-        <div className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container-fluid">
-                <div className="navbar-header">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+        <div className={navbarColors}>
+            <button className="navbar-toggler" type="button" {...collapsingProps}>
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <div className="navbar-nav mr-auto">
+                    {NavItems}
                 </div>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <div className="navbar-nav mr-auto">
-                        {NavItems}
-                    </div>
-                </div>
+                <ReactSwitch
+                    className="m-2"
+                    checked={theme}
+                    onChange={onToggleDarkMode}
+                    checkedIcon={false}
+                    checkedHandleIcon={<SunIcon
+                        style={{
+                            width: "80%",
+                            height: "80%",
+                            marginTop: "10%",
+                            marginLeft: "10%",
+                            verticalAlign: "baseline",
+                            color: "black",
+                        }}
+                        width={undefined}
+                        height={undefined}
+                        viewBox="0 0 16 16"
+                    />}
+                    onColor={"#ffd036"}
+                    uncheckedIcon={false}
+                    uncheckedHandleIcon={<MoonIcon
+                        style={{
+                            width: "80%",
+                            height: "80%",
+                            marginTop: "10%",
+                            marginLeft: "10%",
+                            verticalAlign: "baseline",
+                            color: "black",
+                        }}
+                        width={undefined}
+                        height={undefined}
+                        viewBox="0 0 16 16"
+                    />}
+                    offColor={"#2251bf"}
+                />
             </div>
         </div>
     );

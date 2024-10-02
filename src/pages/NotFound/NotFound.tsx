@@ -3,7 +3,7 @@ import DefaultNavbar from "../../components/DefaultNavbar/DefaultNavbar";
 
 const NotFound = () => {
     return (
-        <>
+        <div>
             <header>
                 <DefaultNavbar/>
             </header>
@@ -15,7 +15,7 @@ const NotFound = () => {
                     </p>
                 </div>
             </main>
-        </>
+        </div>
     );
 }
 
