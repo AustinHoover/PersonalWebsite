@@ -1,19 +1,15 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
 import ProjectListing from "../../components/ProjectListing/ProjectListing";
-//@ts-ignore
 import * as treePic from './GameEngineTree.png';
-//@ts-ignore
 import * as hierarchy from './hierarchy.png';
-//@ts-ignore
 import * as raytracer from './raytracer.gif';
-//@ts-ignore
 import * as terrain from './terrain.gif';
-//@ts-ignore
 import * as telephoneIcon from './Telephone-icon.png';
-//@ts-ignore
 import * as hoi4ide from './hoi4ide.png';
 
-
+/**
+ * The listing of all projects
+ */
 const Projects = () => {
     return (
         <div>

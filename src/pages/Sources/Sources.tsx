@@ -1,6 +1,8 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
 
-
+/**
+ * The sources page
+ */
 const Sources = () => {
     return (
         <div>

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "webpack serve",
-    "build": "webpack",
+    "start": "webpack serve --hot",
+    "build": "webpack --mode=production",
     "test": "jest"
   },
   "author": "Austin Hoover",

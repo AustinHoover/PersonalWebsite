@@ -1,6 +1,9 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
 import * as StarImage from "./StarImage.jpg";
 
+/**
+ * The home page
+ */
 const Index = () => {
     return (
         <div
@@ -29,7 +32,6 @@ const Index = () => {
                                 <p className="text-light display-4">
                                     This is the homepage of Austin Hoover.
                                 </p>
-                                {/* <img className="card-img-top text-light" src="" alt="There was supposed to be a picture of my face here"></img> */}
                             </div>
                         </div>
                         <div className="row"></div>

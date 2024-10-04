@@ -4,75 +4,18 @@ import MoonIcon from "!@svgr/webpack?modules!bootstrap-icons/icons/moon-fill.svg
 import SunIcon from "!@svgr/webpack?modules!bootstrap-icons/icons/sun-fill.svg";
 import ReactSwitch from "react-switch";
 import { ThemeContext } from "../../entry/App";
+import { defaultEntries } from "./naventry";
 
-interface NavEntry {
-    name : string,
-    link : string,
-    external : boolean,
-    isIcon : boolean,
-}
-
-const entries : NavEntry[] = [
-    {
-        name: "Home",
-        link: "/",
-        external : false,
-        isIcon : false,
-    },
-    {
-        name: "Projects",
-        link: "/projects",
-        external : false,
-        isIcon : false,
-    },
-    {
-        name: "Contact",
-        link: "/contact",
-        external : false,
-        isIcon : false,
-    },
-    {
-        name: "Resume",
-        link: "/AustinHooverResume.pdf",
-        external : true,
-        isIcon : false,
-    },
-    {
-        name: "Sources",
-        link: "/sources",
-        external: false,
-        isIcon : false,
-    },
-    {
-        name: "bi bi-github",
-        link: "https://github.com/AustinHoover/",
-        external: true,
-        isIcon: true,
-    },
-    {
-        name: "bi bi-linkedin",
-        link: "https://www.linkedin.com/in/austin-hoover-b4a30b182/",
-        external: true,
-        isIcon: true,
-    },
-    {
-        name: "bi bi-twitter",
-        link: "https://twitter.com/railgunsr/",
-        external: true,
-        isIcon: true,
-    },
-    {
-        name: "bi bi-envelope-fill",
-        link: "mailto:austinwhoover@gmail.com",
-        external: true,
-        isIcon: true,
-    }
-];
-
+/**
+ * Props for the navbar component itself
+ */
 export interface DefaultNavbarProps {
     name? : string,
 }
 
+/**
+ * The navbar component
+ */
 export const DefaultNavbar = (props : DefaultNavbarProps) => {
 
     //Theme control related
@@ -83,7 +26,7 @@ export const DefaultNavbar = (props : DefaultNavbarProps) => {
     }
     const theme = context.getTheme()
 
-    //narbar itself
+    //theme control for navbar itself
     const navbarColors: string = "navbar navbar-expand-lg " + (theme ? "navbar-light bg-light" : "navbar-dark bg-dark")
     const collapsingProps = {
         "data-bs-toggle": "collapse",
@@ -95,9 +38,10 @@ export const DefaultNavbar = (props : DefaultNavbarProps) => {
 
     //links inside the navbar
     let NavItems : JSX.Element[] = [];
-    entries.forEach((el)=>{
+    defaultEntries.forEach((el)=>{
         if(el.external){
             if(el.isIcon){
+                //an icon
                 NavItems.push(
                     <div className="nav-item" key={el.name + "navitem"}>
                         <a href={el.link} className="nav-link"><i className={el.name} role="button" style={{
@@ -107,6 +51,7 @@ export const DefaultNavbar = (props : DefaultNavbarProps) => {
                     </div>
                 )
             } else {
+                //an external non-icon
                 NavItems.push(
                     <div className="nav-item" key={el.name + "navitem"}>
                         <a href={el.link} className="nav-link">{el.name}</a>
@@ -114,29 +59,16 @@ export const DefaultNavbar = (props : DefaultNavbarProps) => {
                 )
             }
         } else {
-            if(props.name){
-                if(props.name === el.name){
-                    NavItems.push(
-                        <div className="nav-item active" key={el.name + "navitem"}>
-                            <Link to={el.link} className="nav-link" >{el.name}</Link>
-                        </div>
-                    );
-                } else {
-                    NavItems.push(
-                        <div className="nav-item" key={el.name + "navitem"}>
-                            <Link to={el.link}  className="nav-link" >{el.name}</Link>
-                        </div>
-                    );
-                }
-            } else {
-                NavItems.push(
-                    <div className="nav-item" key={el.name + "navitem"}>
-                        <Link to={el.link}  className="nav-link" >{el.name}</Link>
-                    </div>
-                );
-            }
+            //internal links
+            NavItems.push(
+                <div className={props?.name === el.name ? "nav-item active" : "nav-item"} key={el.name + "navitem"}>
+                    <Link to={el.link} className="nav-link" >{el.name}</Link>
+                </div>
+            );
         }
     });
+
+
     return (
         <div className={navbarColors}>
             <button className="navbar-toggler" type="button" {...collapsingProps}>

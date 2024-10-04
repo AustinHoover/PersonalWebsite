@@ -7,17 +7,26 @@ import Contact from "../pages/Contact/Contact";
 import Sources from "../pages/Sources/Sources";
 import { ThemeContextData } from "./theme";
 
+/**
+ * Context storing theme
+ */
 export const ThemeContext = React.createContext<ThemeContextData>({
     getTheme: () => true,
     setTheme: (value: boolean) => {console.log(value)},
 })
 
+/**
+ * The app itself
+ */
 export const App = (): JSX.Element => {
+
+    //used for tracking the current theme
     let [theme, setTheme] = React.useState(true)
     let themeValue: ThemeContextData = {
         getTheme: () => theme,
         setTheme: setTheme,
     }
+
     return (
         <React.Suspense fallback={<div>Loading...</div>}>
             <ThemeContext.Provider value={themeValue}>

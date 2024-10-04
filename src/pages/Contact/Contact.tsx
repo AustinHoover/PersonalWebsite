@@ -1,6 +1,8 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
 
-
+/**
+ * The contact page
+ */
 const Contact = () => {
     return (
         <div>

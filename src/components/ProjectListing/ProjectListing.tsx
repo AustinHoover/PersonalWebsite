@@ -1,11 +1,34 @@
 
+/**
+ * Props
+ */
 export interface ProjectListingProps {
+
+    /**
+     * The title of the project
+     */
     title : string,
+
+    /**
+     * The description inset in the card
+     */
     description : string,
+
+    /**
+     * The path to the image file to display with the card
+     */
     imgpath : string,
+
+    /**
+     * If provided, will populate a github button to link to the source code for the project
+     */
     githublink? : string,
+    
 }
 
+/**
+ * A single card on the projects page
+ */
 const ProjectListing = (props : ProjectListingProps) => {
     
     return (

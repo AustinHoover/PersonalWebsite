@@ -1,10 +1,11 @@
 // Generated using webpack-cli http://github.com/webpack-cli
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = {
     mode: 'development',
-    entry: './src/entry/index.js',
+    entry: './src/entry/index.jsx',
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
@@ -14,15 +15,15 @@ module.exports = {
         host: 'localhost',
         port: '8000',
         historyApiFallback: true,
+        hot: true,
     },
     plugins: [
+        // Add your plugins here
+        // Learn more obout plugins from https://webpack.js.org/configuration/plugins/
         new HtmlWebpackPlugin({
             template: './src/entry/index.html',
         }),
-
-
-        // Add your plugins here
-        // Learn more obout plugins from https://webpack.js.org/configuration/plugins/
+        new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
         rules: [

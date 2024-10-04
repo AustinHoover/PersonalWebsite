@@ -1,5 +1,8 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
 
+/**
+ * The 404 page
+ */
 const NotFound = () => {
     return (
         <div>
