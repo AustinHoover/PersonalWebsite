@@ -23,7 +23,9 @@
       "webpack",
       "jest",
       "src/setupTests.ts",
+      "src/test",
       "./*.js",
+      "./*.test.tsx",
     ],
     "types": [
       "typePatches"

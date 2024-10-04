@@ -1,5 +1,4 @@
-import * as React from "react";
-import DefaultNavbar from "../../components/DefaultNavbar/DefaultNavbar";
+import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
 import * as StarImage from "./StarImage.jpg";
 
 const Index = () => {

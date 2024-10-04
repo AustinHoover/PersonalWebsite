@@ -1,5 +1,4 @@
-import * as React from "react";
-import DefaultNavbar from "../../components/DefaultNavbar/DefaultNavbar";
+import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
 import ProjectListing from "../../components/ProjectListing/ProjectListing";
 //@ts-ignore
 import * as treePic from './GameEngineTree.png';

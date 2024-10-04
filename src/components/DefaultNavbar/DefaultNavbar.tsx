@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import MoonIcon from "!@svgr/webpack?modules!bootstrap-icons/icons/moon-fill.svg";
 import SunIcon from "!@svgr/webpack?modules!bootstrap-icons/icons/sun-fill.svg";
 import ReactSwitch from "react-switch";
-//@ts-ignore
 import { ThemeContext } from "../../entry/App";
 
 interface NavEntry {
@@ -74,7 +73,7 @@ export interface DefaultNavbarProps {
     name? : string,
 }
 
-const DefaultNavbar = (props : DefaultNavbarProps) => {
+export const DefaultNavbar = (props : DefaultNavbarProps) => {
 
     //Theme control related
     let context = React.useContext(ThemeContext)
@@ -186,5 +185,3 @@ const DefaultNavbar = (props : DefaultNavbarProps) => {
         </div>
     );
 }
-
-export default DefaultNavbar;

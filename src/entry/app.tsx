@@ -1,5 +1,5 @@
 import * as React from "react"; 
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Index from "../pages/Index/Index";
 import NotFound from "../pages/NotFound/NotFound";
 import Projects from "../pages/Projects/Projects";
@@ -12,7 +12,7 @@ export const ThemeContext = React.createContext<ThemeContextData>({
     setTheme: (value: boolean) => {console.log(value)},
 })
 
-export const App = () => {
+export const App = (): JSX.Element => {
     let [theme, setTheme] = React.useState(true)
     let themeValue: ThemeContextData = {
         getTheme: () => theme,
@@ -22,13 +22,13 @@ export const App = () => {
         <React.Suspense fallback={<div>Loading...</div>}>
             <ThemeContext.Provider value={themeValue}>
                 <BrowserRouter>
-                    <Switch>
-                        <Route path="/" exact component={Index}/>
-                        <Route path="/projects" component={Projects}/>
-                        <Route path="/contact" component={Contact}/>
-                        <Route path="/sources" component={Sources}/>
-                        <Route component={NotFound} exact/>
-                    </Switch>
+                    <Routes>
+                        <Route path="/" element={<Index/>} />
+                        <Route path="/projects" element={<Projects/>} />
+                        <Route path="/contact" element={<Contact/>} />
+                        <Route path="/sources" element={<Sources/>} />
+                        <Route path="*" element={<NotFound/>} />
+                    </Routes>
                 </BrowserRouter>
             </ThemeContext.Provider>
         </React.Suspense>
