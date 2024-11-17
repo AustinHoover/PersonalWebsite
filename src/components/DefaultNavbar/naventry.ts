@@ -61,6 +61,12 @@ export const defaultEntries : NavEntry[] = [
         isIcon : false,
     },
     {
+        name: "GameDev",
+        link: "/gamedev",
+        external: false,
+        isIcon : false,
+    },
+    {
         name: "bi bi-github",
         link: "https://github.com/AustinHoover/",
         external: true,
