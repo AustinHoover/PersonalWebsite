@@ -20,7 +20,6 @@ export const BlogPost = (props : DefaultBlogPostProps) => {
 
     //get url for the blog content
     const blogContentUrl: string = getAssetUrl(props.entry.contentPath)
-    console.log('blogContentUrl',blogContentUrl)
 
     //query for content
     React.useEffect(()=>{
@@ -28,7 +27,6 @@ export const BlogPost = (props : DefaultBlogPostProps) => {
             return response.text()
         }).then(text => {
             setContent(text)
-            console.log('content',text)
         })
     },[blogContentUrl])
 

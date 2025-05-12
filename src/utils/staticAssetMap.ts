@@ -7,7 +7,6 @@ const ctx = require.context('../assets', true, /\.(png|jpe?g|gif|svg|json|html)$
 
 const map: Record<string, string> = {};
 ctx.keys().forEach((key: string) => {
-  console.log(key)
   const fileName = key.replace('./', '');
   map[`static/${fileName}`] = ctx(key);
 });
