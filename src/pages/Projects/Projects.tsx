@@ -1,11 +1,11 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
 import ProjectListing from "../../components/ProjectListing/ProjectListing";
-import * as treePic from './GameEngineTree.png';
-import * as hierarchy from './hierarchy.png';
-import * as raytracer from './raytracer.gif';
-import * as terrain from './terrain.gif';
-import * as telephoneIcon from './Telephone-icon.png';
-import * as hoi4ide from './hoi4ide.png';
+import * as treePic from '../../assets/GameEngineTree.png';
+import * as hierarchy from '../../assets/hierarchy.png';
+import * as raytracer from '../../assets/raytracer.gif';
+import * as terrain from '../../assets/terrain.gif';
+import * as telephoneIcon from '../../assets/Telephone-icon.png';
+import * as hoi4ide from '../../assets/hoi4ide.png';
 
 /**
  * The listing of all projects

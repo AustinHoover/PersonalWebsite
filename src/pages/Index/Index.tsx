@@ -1,5 +1,5 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
-import * as StarImage from "./StarImage.jpg";
+import * as StarImage from "../../assets/StarImage.jpg";
 
 /**
  * The home page

@@ -14,9 +14,6 @@ import { MathJaxContext } from "better-react-mathjax";
  */
 export const App = (): JSX.Element => {
 
-    //used for tracking the current theme
-    let [theme, setTheme] = React.useState(true)
-
     return (
         <React.Suspense fallback={<div>Loading...</div>}>
             <MathJaxContext>
