@@ -5,7 +5,6 @@ import NotFound from "../pages/NotFound/NotFound";
 import Projects from "../pages/Projects/Projects";
 import Contact from "../pages/Contact/Contact";
 import Sources from "../pages/Sources/Sources";
-import { ThemeContextData } from "./theme";
 import GameDev from "../pages/GameDev/GameDev";
 import MathFuncs from "../pages/GameDev/MathFuncs/MathFuncs";
 import { MathJaxContext } from "better-react-mathjax";
@@ -17,10 +16,6 @@ export const App = (): JSX.Element => {
 
     //used for tracking the current theme
     let [theme, setTheme] = React.useState(true)
-    let themeValue: ThemeContextData = {
-        getTheme: () => theme,
-        setTheme: setTheme,
-    }
 
     return (
         <React.Suspense fallback={<div>Loading...</div>}>
