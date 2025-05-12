@@ -17,6 +17,7 @@ module.exports = {
         historyApiFallback: true,
         hot: true,
     },
+    devtool: "source-map",
     plugins: [
         // Add your plugins here
         // Learn more obout plugins from https://webpack.js.org/configuration/plugins/

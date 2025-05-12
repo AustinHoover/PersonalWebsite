@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import MoonIcon from "!@svgr/webpack?modules!bootstrap-icons/icons/moon-fill.svg";
 import SunIcon from "!@svgr/webpack?modules!bootstrap-icons/icons/sun-fill.svg";
 import ReactSwitch from "react-switch";
-import { ThemeContext } from "../../entry/App";
 import { defaultEntries } from "./naventry";
+import { getThemeIsDarkMode, setThemeIsDarkMode } from "../../stores/themeStore";
 
 /**
  * Props for the navbar component itself
@@ -19,14 +19,14 @@ export interface DefaultNavbarProps {
 export const DefaultNavbar = (props : DefaultNavbarProps) => {
 
     //Theme control related
-    let context = React.useContext(ThemeContext)
+    const [theme, setTheme] = React.useState<boolean>(!getThemeIsDarkMode())
     const onToggleDarkMode = (checked: boolean) => {
-        context.setTheme(checked)
-        document.documentElement.setAttribute('data-bs-theme', checked ? "light" : "dark")
+        setThemeIsDarkMode(checked)
+        setTheme(checked)
     }
-    const theme = context.getTheme()
 
     //theme control for navbar itself
+    document.documentElement.setAttribute('data-bs-theme', theme ? "light" : "dark")
     const navbarColors: string = "navbar navbar-expand-lg " + (theme ? "navbar-light bg-light" : "navbar-dark bg-dark")
     const collapsingProps = {
         "data-bs-toggle": "collapse",
