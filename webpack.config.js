@@ -48,8 +48,12 @@ module.exports = {
                 type: 'asset/resource'
             },
             {
-                test: /\.jpg$|.gif/,
+                test: /\.jpg$|\.gif$/,
                 type: 'asset',
+            },
+            {
+                test: /\.json$/,
+                type: 'asset/source',
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
