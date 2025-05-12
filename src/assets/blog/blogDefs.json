@@ -3,11 +3,7 @@
         {
             "id" : "1",
             "title" : "First Blog Post",
-            "content" : [
-                {
-                    "text" : "Some text"
-                }
-            ]
+            "content" : "First blog post text"
         }
     ]
 }

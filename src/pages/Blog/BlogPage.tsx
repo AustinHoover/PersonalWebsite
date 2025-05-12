@@ -5,16 +5,6 @@ import * as blogDefs from '../../assets/blog/blogDefs.json';
 import React = require("react");
 
 /**
- * Content within the blog post
- */
-interface BlogContent {
-    /**
-     * Raw text content
-     */
-    text: string,
-}
-
-/**
  * A single blog entry
  */
 export interface BlogEntry {
@@ -29,7 +19,7 @@ export interface BlogEntry {
     /**
      * The content of the blog post
      */
-    content: BlogContent[],
+    content: string,
 }
 
 /**

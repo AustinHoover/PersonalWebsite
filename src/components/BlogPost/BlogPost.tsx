@@ -15,14 +15,13 @@ export interface DefaultBlogPostProps {
  */
 export const BlogPost = (props : DefaultBlogPostProps) => {
 
-    const contentEls: JSX.Element[] = props.entry.content.map((content, i) => {
-        return <div key={'content' + i}>{content.text}</div>
-    })
+    //construct the inner html object
+    const innnerHtml = { __html: props.entry.content }
 
     return (
         <div>
             <h1>{props.entry.title}</h1>
-            {contentEls}
+            <div dangerouslySetInnerHTML={innnerHtml}></div>
         </div>
     );
 }
