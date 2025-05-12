@@ -20,7 +20,6 @@ export const initThemeStore = () => {
     if(!!window.localStorage.getItem(THEME_STORAGE_KEY)){
         themeIsDarkMode = true
     }
-    console.log('themeIsDarkMode: ' + themeIsDarkMode)
 }
 
 
@@ -31,7 +30,6 @@ export const initThemeStore = () => {
 export const setThemeIsDarkMode = (value: boolean) => {
     themeIsDarkMode = value
     window.localStorage.setItem(THEME_STORAGE_KEY,value + '')
-    console.log(themeIsDarkMode)
 }
 
 /**
