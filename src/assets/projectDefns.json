@@ -1,0 +1,36 @@
+{
+    "projects" : [
+        {
+            "title" : "Storm Engine",
+            "description" : "A fully functional game engine. It supports synchronized networking, scripting, physics, order-independent transparency, clustered lighting, and hooks into my terrain generation library.",
+            "imgpath" : "static/images/GameEngineTree.png"
+        },
+        {
+            "title" : "HOI4 IDE",
+            "description" : "A partially complete IDE for building mods for the video game Hearts of Iron 4.",
+            "imgpath" : "static/images/hoi4ide.png",
+            "githublink" : "https://github.com/AustinHoover/hoi4ide"
+        },
+        {
+            "title" : "Telephone",
+            "description" : "A games netcode parser generator written in Java.",
+            "imgpath" : "static/images/Telephone-icon.png",
+            "githublink" : "https://github.com/AustinHoover/Telephone"
+        },
+        {
+            "title" : "Ray Tracer",
+            "description" : "I wrote this ray tracer in highschool. The code is gross but hey it's a pretty gif.",
+            "imgpath" : "static/images/raytracer.gif"
+        },
+        {
+            "title" : "IT Management Software",
+            "description" : "While working in IT, I wrote software that performed various tasks and was managable from a central reporting server.",
+            "imgpath" : "static/images/hierarchy.png"
+        },
+        {
+            "title" : "Terrain Generation Library",
+            "description" : "A library I designed for generating terrain. Above is a video of it in action. It simulates plate tectonics to create semi-realistic landmasses.",
+            "imgpath" : "static/images/terrain.gif"
+        }
+    ]
+}

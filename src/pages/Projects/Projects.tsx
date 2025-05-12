@@ -1,16 +1,44 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
-import ProjectListing from "../../components/ProjectListing/ProjectListing";
+import ProjectListing, { ProjectListingProps } from "../../components/ProjectListing/ProjectListing";
 import * as treePic from '../../assets/GameEngineTree.png';
 import * as hierarchy from '../../assets/hierarchy.png';
 import * as raytracer from '../../assets/raytracer.gif';
 import * as terrain from '../../assets/terrain.gif';
 import * as telephoneIcon from '../../assets/Telephone-icon.png';
 import * as hoi4ide from '../../assets/hoi4ide.png';
+import * as projectListings from '../../assets/projectDefns.json';
+import { getImageUrl } from "../../utils/staticImageMap";
+
+/**
+ * Interface for the assets json file
+ */
+interface ProjectListingFile {
+    /**
+     * The list of projects
+     */
+    projects: ProjectListingProps[]
+}
 
 /**
  * The listing of all projects
  */
 const Projects = () => {
+
+    //load project listings file
+    const projectsFile = JSON.parse(projectListings as any as string) as ProjectListingFile
+    const projectEls: JSX.Element[] = projectsFile.projects.map(listing => {
+        const imgPath: string = getImageUrl(listing.imgpath)
+        return <div className="col">
+                    <ProjectListing 
+                        title={listing.title}
+                        description={listing.description}
+                        imgpath={imgPath}
+                        githublink={listing.githublink}
+                    />
+                </div>
+    })
+
+
     return (
         <div>
             <header>
@@ -26,50 +54,7 @@ const Projects = () => {
                         Someday maybe these boxes will be clickable.
                     </p>
                     <div className="row row-cols-1 row-cols-md-3 g-4">
-                        <div className="col h-100 flex-grow-1">
-                            <ProjectListing 
-                                title={"3D Game Engine"}
-                                description={"A fully functional game engine. It supports synchronized networking, scripting, physics, order-independent transparency, clustered lighting, and hooks into my terrain generation library."}
-                                imgpath={treePic}
-                            />
-                        </div>
-                        <div className="col">
-                            <ProjectListing 
-                                title={"HOI4 IDE"}
-                                description={"A partially complete IDE for building mods for the video game Hearts of Iron 4."}
-                                imgpath={hoi4ide}
-                                githublink={"https://github.com/AustinHoover/hoi4ide"}
-                            />
-                        </div>
-                        <div className="col">
-                        <ProjectListing 
-                                title={"Telephone"}
-                                description={"A games netcode parser generator written in Java."}
-                                imgpath={telephoneIcon}
-                                githublink={"https://github.com/AustinHoover/Telephone"}
-                            />
-                        </div>
-                        <div className="col">
-                            <ProjectListing 
-                                title={"Ray Tracer"}
-                                description={"I wrote this ray tracer in highschool. The code is gross but hey it's a pretty gif."}
-                                imgpath={raytracer}
-                            />
-                        </div>
-                        <div className="col">
-                            <ProjectListing 
-                                title={"IT Management Software"}
-                                description={"While working in IT, I wrote software that performed various tasks and was managable from a central reporting server."}
-                                imgpath={hierarchy}
-                            />
-                        </div>
-                        <div className="col">
-                            <ProjectListing 
-                                title={"Terrain Generation Library"}
-                                description={"A library I designed for generating terrain. Above is a video of it in action. It simulates plate tectonics to create semi-realistic landmasses."}
-                                imgpath={terrain}
-                            />
-                        </div>
+                        {projectEls}
                     </div>
                 </div>
             </main>
