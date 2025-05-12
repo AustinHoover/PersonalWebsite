@@ -3,7 +3,7 @@
         {
             "id" : "1",
             "title" : "First Blog Post",
-            "content" : "First blog post text"
+            "contentPath" : "static/blog/blogFirst.html"
         }
     ]
 }
