@@ -1,5 +1,5 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
-import * as GameView from "../../assets/GameView.png";
+import * as StarImage from "../../assets/StarImage.jpg";
 
 /**
  * The home page
@@ -8,14 +8,14 @@ const Index = () => {
     return (
         <div
         style={{
-            backgroundImage : `url(${GameView})`,
+            backgroundImage : `url(${StarImage})`,
             backgroundSize : "cover",
             height: "100vh",
         }}
         >
             <div
             style={{
-                backgroundImage : `url(${GameView})`,
+                backgroundImage : `url(${StarImage})`,
                 backgroundSize : "cover",
                 height: "100vh",
             }}

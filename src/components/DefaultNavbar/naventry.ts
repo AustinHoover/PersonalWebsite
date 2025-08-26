@@ -43,12 +43,6 @@ export const defaultEntries : NavEntry[] = [
         isIcon : false,
     },
     {
-        name: "Blog",
-        link: "/blog/1",
-        external : false,
-        isIcon : false,
-    },
-    {
         name: "Contact",
         link: "/contact",
         external : false,
@@ -58,6 +52,12 @@ export const defaultEntries : NavEntry[] = [
         name: "Resume",
         link: "/AustinHooverResume.pdf",
         external : true,
+        isIcon : false,
+    },
+    {
+        name: "Sources",
+        link: "/sources",
+        external: false,
         isIcon : false,
     },
     {
