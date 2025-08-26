@@ -57,10 +57,6 @@ module.exports = {
                 type: 'asset/source',
             },
             {
-                test: /blog.*\.html$/,
-                type: 'asset/resource'
-            },
-            {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [
                     {

@@ -3,13 +3,12 @@
  */
 
 
-const ctx = require.context('../assets', true, /\.(png|jpe?g|gif|svg|json|html)$/);
+const ctx = require.context('../assets', false, /\.(png|jpe?g|gif|svg)$/);
 
 const map: Record<string, string> = {};
 ctx.keys().forEach((key: string) => {
-  console.log(key)
   const fileName = key.replace('./', '');
-  map[`static/${fileName}`] = ctx(key);
+  map[`static/images/${fileName}`] = ctx(key);
 });
 
 /**
@@ -17,6 +16,6 @@ ctx.keys().forEach((key: string) => {
  * @param path The static path prior to packing
  * @returns The webpack-generated path
  */
-export function getAssetUrl(path: string) {
+export function getImageUrl(path: string) {
   return map[path];
 }

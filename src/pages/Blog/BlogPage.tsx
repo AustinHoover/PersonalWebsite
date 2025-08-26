@@ -17,9 +17,9 @@ export interface BlogEntry {
      */
     id: string,
     /**
-     * The path to the content of the blog
+     * The content of the blog post
      */
-    contentPath: string,
+    content: string,
 }
 
 /**

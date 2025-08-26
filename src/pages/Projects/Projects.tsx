@@ -1,7 +1,7 @@
 import { DefaultNavbar } from "../../components/DefaultNavbar/DefaultNavbar";
 import ProjectListing, { ProjectListingProps } from "../../components/ProjectListing/ProjectListing";
-import * as projectListings from '../../assets/projects/projectDefns.json';
-import { getAssetUrl } from "../../utils/staticAssetMap";
+import * as projectListings from '../../assets/projectDefns.json';
+import { getImageUrl } from "../../utils/staticImageMap";
 
 /**
  * Interface for the assets json file
@@ -21,7 +21,7 @@ const Projects = () => {
     //load project listings file
     const projectsFile = JSON.parse(projectListings as any as string) as ProjectListingFile
     const projectEls: JSX.Element[] = projectsFile.projects.map((listing, i) => {
-        const imgPath: string = getAssetUrl(listing.imgpath)
+        const imgPath: string = getImageUrl(listing.imgpath)
         return <div className="col" key={'listing' + i}>
                     <ProjectListing 
                         title={listing.title}
